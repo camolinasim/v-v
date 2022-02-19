@@ -1,7 +1,7 @@
 # Validity of Triangle given sides
 
 # Function definition to check validity
-def is_valid_triangle(a, b, c):
+def is_triangle(a, b, c):
     if a + b >= c and b + c >= a and c + a >= b:
         return True
     else:
@@ -14,8 +14,10 @@ def type_of_triangle(a, b, c):
         print('Triangle is Equilateral.')
     elif a == b or b == c or a == c:
         print('Triangle is Isosceles.')
-    else:
+    elif a!=b and a!=c and b!=c:
         print('Triangle is Scalane')
+    else:
+        print("Not a Triangle")
 
 
 def sanitised_input(prompt, type_=None, min_=None, max_=None, range_=None):
@@ -57,7 +59,7 @@ side_b = sanitised_input('Enter length of side b: ', int, 1, 200)
 side_c = sanitised_input('Enter length of side c: ', int, 1, 200)
 
 # Function call & making decision
-if is_valid_triangle(side_a, side_b, side_c):
+if is_triangle(side_a, side_b, side_c):
     type_of_triangle(side_a, side_b, side_c)
 else:
-    print('Tringle is not possible from given sides.')
+    print('NotATriangle')
